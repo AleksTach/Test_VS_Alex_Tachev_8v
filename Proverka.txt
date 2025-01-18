@@ -1,0 +1,296 @@
+Комуникация с git bash по време мна целия процес:
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS
+$ git clone https://github.com/AleksTach/Test_VS_Alex_Tachev_8v.git
+Cloning into 'Test_VS_Alex_Tachev_8v'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS
+$ cd Test_VS_Alex_Tachev_8v/
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Tekstovi dokomenti/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (main)
+$ git add -A
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (main)
+$ git commit -m "commit_1"
+[main ee0e020] commit_1
+ 3 files changed, 12 insertions(+)
+ create mode 100644 Tekstovi dokomenti/file 2.txt
+ create mode 100644 Tekstovi dokomenti/file1 .txt
+ create mode 100644 Tekstovi dokomenti/file3 .txt
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (main)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 705 bytes | 352.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/AleksTach/Test_VS_Alex_Tachev_8v.git
+   18a8e08..ee0e020  main -> main
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (main)
+$ git branch klonka
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (main)
+$ git branch klonche
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (main)
+$ git branch
+  klonche
+  klonka
+* main
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (main)
+$ git checkout klonka
+Switched to branch 'klonka'
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonka)
+$ git status
+On branch klonka
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Tekstovi dokomenti/file 2.txt
+        modified:   Tekstovi dokomenti/file1 .txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonka)
+$ git add -A
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonka)
+$ git commit -m "branch_1"
+[klonka 4d0ccff] branch_1
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonka)
+$ git push
+fatal: The current branch klonka has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin klonka
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonka)
+$ git push --set-upstream origin klonka
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 488 bytes | 488.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'klonka' on GitHub by visiting:
+remote:      https://github.com/AleksTach/Test_VS_Alex_Tachev_8v/pull/new/klonk
+remote:
+To https://github.com/AleksTach/Test_VS_Alex_Tachev_8v.git
+ * [new branch]      klonka -> klonka
+branch 'klonka' set up to track 'origin/klonka'.
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonka)
+$
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonka)
+$ git checkout klonche
+Switched to branch 'klonche'
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonche)
+$ git status
+On branch klonche
+nothing to commit, working tree clean
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonche)
+$ git status
+On branch klonche
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Tekstovi dokomenti/file 2.txt
+        modified:   Tekstovi dokomenti/file1 .txt
+        modified:   Tekstovi dokomenti/file3 .txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonche)
+$ git add -A
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonche)
+$ git commit -m "branch_2"
+[klonche cf6a9a2] branch_2
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonche)
+$ git push
+fatal: The current branch klonche has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin klonche
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonche)
+$ git push --set-upstream origin klonche
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 596 bytes | 596.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'klonche' on GitHub by visiting:
+remote:      https://github.com/AleksTach/Test_VS_Alex_Tachev_8v/pull/new/klonche
+remote:
+To https://github.com/AleksTach/Test_VS_Alex_Tachev_8v.git
+ * [new branch]      klonche -> klonche
+branch 'klonche' set up to track 'origin/klonche'.
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonche)
+$
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonche)
+$ git pull origin main
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 893 bytes | 148.00 KiB/s, done.
+From https://github.com/AleksTach/Test_VS_Alex_Tachev_8v
+ * branch            main       -> FETCH_HEAD
+   ee0e020..b3288fc  main       -> origin/main
+Auto-merging Tekstovi dokomenti/file 2.txt
+CONFLICT (content): Merge conflict in Tekstovi dokomenti/file 2.txt
+Auto-merging Tekstovi dokomenti/file1 .txt
+CONFLICT (content): Merge conflict in Tekstovi dokomenti/file1 .txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonche|MERGING)
+$
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonche|MERGING)
+$ git merge main
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonche|MERGING)
+$ git status
+On branch klonche
+Your branch is up to date with 'origin/klonche'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   Tekstovi dokomenti/file 2.txt
+        both modified:   Tekstovi dokomenti/file1 .txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonche|MERGING)
+$ git status
+On branch klonche
+Your branch is up to date with 'origin/klonche'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   Tekstovi dokomenti/file 2.txt
+        both modified:   Tekstovi dokomenti/file1 .txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonche|MERGING)
+$ git add -A
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonche|MERGING)
+$ git commit -m "merge_conflict"
+[klonche 2d677a9] merge_conflict
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonche)
+$ git push
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 515 bytes | 515.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/AleksTach/Test_VS_Alex_Tachev_8v.git
+   cf6a9a2..2d677a9  klonche -> klonche
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (klonche)
+$ git checkout main
+Switched to branch 'main'
+Your branch is behind 'origin/main' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (main)
+$ git pull
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 892 bytes | 22.00 KiB/s, done.
+From https://github.com/AleksTach/Test_VS_Alex_Tachev_8v
+   b3288fc..9b5c06a  main       -> origin/main
+Updating ee0e020..9b5c06a
+Fast-forward
+ Tekstovi dokomenti/file 2.txt | 2 +-
+ Tekstovi dokomenti/file1 .txt | 4 ++--
+ Tekstovi dokomenti/file3 .txt | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (main)
+$ git branch
+  klonche
+  klonka
+* main
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (main)
+$ git branch -d klonka
+Deleted branch klonka (was 4d0ccff).
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (main)
+$ git branch -d klonche
+Deleted branch klonche (was 2d677a9).
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (main)
+$ git branch
+* main
+
+tisho@Aleks_Tachev MINGW64 ~/Desktop/Test_VS/Test_VS_Alex_Tachev_8v (main)
+$ gitk
